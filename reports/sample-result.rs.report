@@ -1,0 +1,157 @@
+
+# Results
+
+<results url="file://results.rs.result" resName="SillyName"></results>
+<results url="file://results2.rs.result" resName="Interpol"></results>
+
+# SVG
+
+<svg viewBox="0 0 500 300" width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="400" height="40" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <g transform="translate(200) rotate({{90+value("SillyName.Case_0.revolute1.phi")*180/3.14}},0,40)">
+   <line x1="0" y1="40" x2="0" y2="200" stroke="black" />
+   <circle style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" r="40" cy="200"/>
+    <text x="-35" y="260" >tau={{value("SillyName.Case_0.revolute1.tau",4)}}</text>
+  </g>
+</svg>
+
+
+
+
+# Heatmap
+
+<heatmap  height=400px>
+const sizeX = c.vector("Interpol.Case_0.data2DInterp.size_x[2]")[0];
+const sizeY =c.vector("Interpol.Case_0.data2DInterp.size_y[2]")[0];
+const data =[];
+const x= [];
+const y = [];
+for (let j= 0; j < sizeY; j++) {
+  const val = c.value("Interpol.Case_0.data2DInterp.y_data[1, " +(j+1)+"]",2,0);
+  y.push(val);
+}
+let min = Number.MAX_SAFE_INTEGER;
+let max = -Number.MAX_SAFE_INTEGER;
+for (let i = 0; i < sizeX; i++) {
+  x.push(c.value("Interpol.Case_0.data2DInterp.x_data[1, "+(i+1)+"]",2,0));
+  for (let j=0; j < sizeY; j++) {
+    const name = "Interpol.Case_0.data2DInterp.data["+(i+1)+", "+ (j+1)+"]";
+    const val = c.vector(name)[0];
+    data.push([i,j, val])
+    min =Math.min(min,val);
+    max =Math.max(max,val);
+  }
+}
+return {
+  x: x,
+  y: y,
+  data: data,
+  min: min,
+  max: max
+};
+</heatmap>
+
+
+<heatmap>
+  const phiArray = c.vector("SillyName.Case_0.revolute1.internalAxis.tau");
+  const tauArray = c.vector("SillyName.Case_0.revolute1.internalAxis.phi");
+  const phi = c.value("SillyName.Case_0.revolute1.internalAxis.tau");
+  const tau = c.value("SillyName.Case_0.revolute1.internalAxis.phi");
+  res=  {
+    x: [1,4],
+    y: [1,2],
+    data: [
+        [0,0,phi],
+        [0,1,tau], 
+        [1,0,5],
+        [1,1,6] 
+        ],
+    min: Math.min(...phiArray,...tauArray),
+    max:  Math.max(...phiArray, ...tauArray)
+  }
+  return res;
+</heatmap>
+
+# Charts
+
+## Single chart
+
+<chart signals="SillyName.Case_0.revolute1.tau,Case_0.revolute1.w" height="300px"></chart>
+
+### Chart grid
+
+<grid>
+  <grow>
+    <gcol>
+      <chart signals="SillyName.Case_0.revolute1.tau" width=100% height=200px></chart>
+    </gcol>
+  </grow>
+  <grow>
+    <gcol>
+      <chart signals="SillyName.Case_0.revolute1.w" width=100%height=200px></chart>
+    </gcol>
+    <gcol>
+      <chart signals="SillyName.Case_0.revolute1.w" width=100% height=200px></chart>
+    </gcol>
+  </grow>
+</grid>
+
+# Animation
+
+<animation></animation>
+
+# Variables
+
+## Direct rendering
+
+Trajectory **"revolute1.tau"**  at time **{{now().toFixed(3)}}** value **{{value("SillyName.Case_0.revolute1.tau",4)}}**
+
+Constant **boxBody2.density**  = **{{value("SillyName.Case_0.boxBody2.density",4,0)}}**
+
+## Component renderer
+
+<variable signal="SillyName.Case_0.revolute1.tau" precision="3"></variable>
+
+## Gauge renderer
+
+<variable signal="SillyName.Case_0.revolute1.tau" precision="3" gauge="true" height="400px"></variable>
+
+## Table 
+
+<constants signals="SillyName.Case_0.revolute1.tau,Case_0.revolute1.phi"></constants>
+
+
+## Variable tree
+
+<tree></tree>
+
+# General
+
+## Equation
+
+$L = \sqrt{\frac{1}{2} \rho v^2 S C_L + ({{value("SillyName.Case_0.revolute1.tau", 4)}}) }$
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+
+## Table
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+| 1 | 2  | 5  | 6   |
+## Tasklist
+
+* [ ] to do
+* [x] done

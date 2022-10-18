@@ -1,0 +1,1 @@
+docker run --rm -it  -p 3000:3000/tcp --mount type=bind,source="$(pwd)",target=/home/workspace/repo solver:latest

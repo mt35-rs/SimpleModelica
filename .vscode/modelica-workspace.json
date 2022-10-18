@@ -1,0 +1,14 @@
+{
+    "rootFolders": {
+        "ITest": "${workspaceFolder}/ITest"    },
+    "folders": ["${workspaceFolder}/ITest", "${workspaceFolder}"],
+    "solverPersistentLibraries": [
+        "${workspaceFolder}/persistent-libraries/Modelica",
+        "${workspaceFolder}/persistent-libraries/ModelicaServices",
+        "${workspaceFolder}/persistent-libraries/Complex.mo"
+    ],
+    "modelicaPath": [
+        "${workspaceFolder}/persistent-libraries",
+        "${workspaceFolder}"
+    ]
+}
