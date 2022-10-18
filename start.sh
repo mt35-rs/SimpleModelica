@@ -1,1 +1,1 @@
-docker run --rm -it  -p 3000:3000/tcp --mount type=bind,source="$(pwd)",target=/home/workspace/repo solver:latest
+docker run --rm -it  -p 3000:3000/tcp --mount type=bind,source="$(pwd)",target=/home/workspace/repo registry.gitlab.com/ricardo-software/applications/system-modeller/test-libs/code-server:v0.0.1
