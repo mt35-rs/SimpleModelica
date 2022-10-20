@@ -2,6 +2,9 @@
     "rootFolders": {
         "ITest": "${workspaceFolder}/ITest"    },
     "folders": ["${workspaceFolder}/ITest", "${workspaceFolder}"],
+    "preloadedLibraries": {
+        "Modelica": "${workspaceFolder}/persistent-libraries/modelica.zip"
+    },
     "solverPersistentLibraries": [
         "${workspaceFolder}/persistent-libraries/Modelica",
         "${workspaceFolder}/persistent-libraries/ModelicaServices",
