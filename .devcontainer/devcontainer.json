@@ -3,7 +3,7 @@
     // "build": {
     //   "dockerfile": "Dockerfile"
     // },
-    "image": "vscode.rs-apps.com/server:v0.0.13",
+    "image": "rsdsio.azurecr.io/vscode.rs-apps.com/server:v0.0.13",
     "extensions": [
         // Ignore this error this will actually do installation for us
         "/home/node/modelica.vsix"
