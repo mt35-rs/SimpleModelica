@@ -1,0 +1,11 @@
+{
+    "name": "Modelica-Development",
+    // "build": {
+    //   "dockerfile": "Dockerfile"
+    // },
+    "image": "rsdsio.azurecr.io/vscode.rs-apps.com/server:v0.0.1",
+    "extensions": [
+        // Ignore this error this will actually do installation for us
+        "/home/workspace/modelica.vsix "
+    ]
+}
