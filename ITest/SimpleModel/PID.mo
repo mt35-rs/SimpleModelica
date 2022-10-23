@@ -97,10 +97,12 @@ equation
     
     
     annotation(Documentation(info = "<html><p>Documentation for <strong>ITest.SimpleModel.TestModel</strong></p></html>"),
-        Report(text = "
+        Report(
+	text="
+
 # Chart
 
-<chart signals=\"Solver\\.*.Case_0.inertia1.w,Solver\\.*.Case_0.kinematicPTP.y[1]\"  height=\"200px\"></chart>
+<chart signals=\"Solver.*.Case_0.inertia1.w,Solver.*.Case_0.step.y\"  height=\"200px\"></chart>
 
 # Variable tree
 
