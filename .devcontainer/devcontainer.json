@@ -1,12 +1,9 @@
 {
     "name": "Modelica-Development",
-    // "build": {
-    //   "dockerfile": "Dockerfile"
-    // },
-    "image": "rsdsio.azurecr.io/vscode.rs-apps.com/server:v0.0.13",
+    "image": "rsdsio.azurecr.io/vscode.rs-apps.com/server:v0.0.14",
     "extensions": [
         // Ignore this error this will actually do installation for us
-        "/home/node/modelica.vsix"
+        "/home/pn/modelica.vsix"
     ],
-    "remoteUser": "node"
+    "remoteUser": "pn"
 }

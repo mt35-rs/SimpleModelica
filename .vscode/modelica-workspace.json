@@ -13,5 +13,9 @@
     "modelicaPath": [
         "${workspaceFolder}/persistent-libraries",
         "${workspaceFolder}"
-    ]
+    ],
+    "ws": {
+        "port": 6000,
+        "maxPayload" : 1073741824
+    }
 }
