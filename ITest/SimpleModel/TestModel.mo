@@ -3,6 +3,7 @@ model TestModel
     parameter String file = "/home/pn/SimpleModelica/test.csv" annotation (Dialog(
         loadSelector(filter="M files (*.csv);;All files (*.*)",
         caption="Open file in which table is present")));
+    // TODO: Add a descriptive string here
     parameter Real k = 12;
     parameter Real torqueConst = -10 "Constant torque";
     parameter Real J1 = 1 "First inertia";
