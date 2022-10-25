@@ -35,7 +35,7 @@ model TestModel
     Modelica.Blocks.Math.Gain gain(k = k)
         annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}},
                     rotation = 90,
-                    origin = {-90, 12.17})));
+                    origin = {-83.88, -10})));
 equation
     connect(inertia.flange_a, torque.flange) annotation(Line(points = {
                 {-4.6, 12.17},
@@ -66,17 +66,8 @@ equation
                 {-83.88, -74.85},
                 {-83.88, -74.85}
             }));
-    connect(_sin.y, gain.u) annotation(Line(points = {
-                {-83.88, -39},
-                {-83.88, 0.17},
-                {-90, 0.17}
-            }));
-    connect(gain.y, torque.tau) annotation(Line(points = {
-                {-90, 23.17},
-                {-90, 12.33},
-                {-37.24, 12.33},
-                {-37.24, 12.17}
-            }));
+    connect(_sin.y, gain.u) annotation(Line(points = {{-83.88, -39}, {-83.88, -22}, {-83.88, -22}}));
+    connect(gain.y, torque.tau) annotation(Line(points = {{-83.88, 1}, {-83.88, 12.33}, {-37.24, 12.33}, {-37.24, 12.17}}));
     annotation(Documentation(info = "<html><p>Documentation for <strong>ITest.SimpleModel.TestModel</strong></p></html>"),
         Report(
 	text="# Input signals
