@@ -1,6 +1,6 @@
 within ITest.SimpleModel;
 model TestModel
-    parameter String file = "" annotation (Dialog(
+    parameter String file = "/home/pn/SimpleModelica/test.csv" annotation (Dialog(
         loadSelector(filter="M files (*.csv);;All files (*.*)",
         caption="Open file in which table is present")));
     parameter Real k = 12;
