@@ -78,14 +78,15 @@ equation
                 {-37.24, 12.17}
             }));
     annotation(Documentation(info = "<html><p>Documentation for <strong>ITest.SimpleModel.TestModel</strong></p></html>"),
-        Report(text = "
-# Chart
+        Report(
+	text="# Input signals
 
-<chart signals=\"Solver\\.*.Case_0.inertia1.w,Solver\\.*.Case_0.kinematicPTP.y[1]\"  height=\"200px\"></chart>
+<chart signals=\"Solver\\.*.Case_0.gain.y\"  height=\"400px\"></chart>
 
-# Variable tree
+# Output
 
-<tree></tree>
+<chart signals=\"Solver\\.*.Case_0.inertia1.w,Solver\\.*.Case_0.kinematicPTP.y[1]\"  height=\"400px\"></chart>
+
 "),
         Icon(coordinateSystem(preserveAspectRatio = true,
                 extent = {{-100.0, -100.0}, {100.0, 100.0}}),
